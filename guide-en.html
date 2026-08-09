@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sheet Magic User Guide</title>
+  <style>
+    :root { --blue:#1a73e8; --ink:#202124; --muted:#5f6368; --line:#e1e5ea; --soft:#f7f9fc; }
+    * { box-sizing:border-box; } body { margin:0; font-family:Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--soft); line-height:1.65; }
+    header { background:linear-gradient(135deg,#174ea6,#1a73e8); color:white; padding:64px 24px; } header>div,main,footer { max-width:960px; margin:auto; }
+    h1 { margin:0 0 12px; font-size:clamp(32px,5vw,52px); letter-spacing:-.04em; } header p { max-width:650px; font-size:18px; opacity:.9; }
+    nav { display:flex; flex-wrap:wrap; gap:10px; margin-top:24px; } nav a { color:white; text-decoration:none; border:1px solid #ffffff80; border-radius:999px; padding:6px 13px; font-size:14px; }
+    main { padding:44px 24px 72px; } section { margin-bottom:56px; } h2 { font-size:28px; letter-spacing:-.03em; margin-bottom:10px; } h3 { margin-bottom:6px; }
+    .lead { color:var(--muted); } .steps { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; } .step { background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:0 3px 12px #2021240d; }
+    .step img { display:block; width:100%; } .copy { padding:18px 20px; } .number { color:var(--blue); font-weight:700; font-size:13px; letter-spacing:.08em; } .note { background:#e8f0fe; border-left:4px solid var(--blue); padding:14px 16px; }
+    .tag { background:#202124; color:#fff; border-radius:6px; padding:14px 16px; overflow:auto; } footer { border-top:1px solid var(--line); padding:24px; color:var(--muted); font-size:14px; } footer a { color:var(--blue); }
+    @media (max-width:680px) { .steps { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <header><div><h1>Sheet Magic</h1><p>Fill Google Slides templates with Google Sheets data and generate PDF or PPT files from Chrome.</p><nav><a href="#quick-start">Quick start</a><a href="#template">Templates</a><a href="#profile">Profiles</a><a href="#schedule">Schedules</a><a href="privacy-policy.html">Privacy Policy</a><a href="guide.html">한국어</a></nav></div></header>
+  <main>
+    <section id="quick-start"><h2>Quick start</h2><p class="lead">Set up the workflow once, then reuse it whenever you need to generate documents.</p><div class="steps">
+      <article class="step"><img src="images/01-generation.png" alt="Sheet Magic generation screen"><div class="copy"><div class="number">01 · CONNECT</div><h3>Open a Google Sheet</h3><p>Open the extension while a Google Sheet is active. Confirm the connection, load the headers, and set the row range and font sizes.</p></div></article>
+      <article class="step"><img src="images/03-template.png" alt="Google Drive template picker"><div class="copy"><div class="number">02 · TEMPLATE</div><h3>Select a Slides template</h3><p>Choose the Google Slides file that contains the layout you want to fill. The selected template can be saved in a task profile.</p></div></article>
+      <article class="step"><img src="images/02-profile.png" alt="Sheet Magic task profile screen"><div class="copy"><div class="number">03 · REUSE</div><h3>Save a task profile</h3><p>Save the row range, filters, grouping, fonts, output mode, and destination together. Load the profile next time instead of entering everything again.</p></div></article>
+      <article class="step"><img src="images/04-schedule.png" alt="Sheet Magic schedule screen"><div class="copy"><div class="number">04 · AUTOMATE</div><h3>Schedule a generation</h3><p>Select a saved profile, choose a frequency and destination, and review the latest result or retry status in Schedule Management.</p></div></article>
+    </div></section>
+    <section id="template"><h2>Writing a Slides template</h2><p class="lead">Wrap a Sheet header in double angle brackets to insert the value from that column.</p><div class="tag">&lt;&lt;Header&gt;&gt;<br>&lt;&lt;WaterSupply{Date:2025-02-09}&gt;&gt;</div><p>The first form inserts a value directly. The conditional form selects a value from the row that matches the condition. Header names must match the first row of the Sheet.</p><div class="note"><strong>Tip</strong><br>Test a small row range before generating a large batch. This makes template errors and API quota issues easier to identify.</div></section>
+    <section id="profile"><h2>Task profiles</h2><p>Save recurring work in the Generation tab. A profile stores the template, row range, filters, grouping, fonts, output mode, and destination.</p><p>After loading a profile, confirm the visible settings before generating. Reset clears ordinary settings but preserves saved profiles and schedules.</p></section>
+    <section id="schedule"><h2>Scheduled generation</h2><p>In Schedule Management, select a profile, frequency, time, and destination.</p><ol><li>Save a profile in the Generation tab.</li><li>Select the profile and time in Schedule Management.</li><li>Choose Google Drive or local download.</li><li>Review the latest result, failure reason, retry time, or output link.</li></ol><div class="note"><strong>Note</strong><br>Scheduled generation uses the Chrome extension alarm system. Temporary Google Slides API quota limits may cause an automatic retry.</div></section>
+  </main>
+  <footer>Sheet Magic · <a href="privacy-policy.html">Privacy Policy</a> · <a href="guide.html">한국어</a> · Feedback: sheetmagic@pocketwork.org</footer>
+</body>
+</html>
