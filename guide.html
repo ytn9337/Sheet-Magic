@@ -29,22 +29,21 @@
     .tag { background:#202124; color:#fff; border-radius:6px; padding:14px 16px; overflow:auto; }
     footer { border-top:1px solid var(--line); padding:24px; color:var(--muted); font-size:14px; }
     footer a { color:var(--blue); }
+    .site-header { background:#fff; border-bottom:1px solid var(--line); }
+    .site-bar { max-width:960px; margin:auto; padding:10px 24px; display:flex; align-items:center; gap:8px; }
+    .site-tabs { display:flex; gap:4px; overflow:auto; flex:1; }
+    .site-tabs a { color:var(--muted); text-decoration:none; padding:7px 10px; border-radius:6px; white-space:nowrap; font-size:13px; }
+    .site-tabs a:hover, .site-tabs a.active { color:var(--blue); background:#e8f0fe; }
+    .language-select { flex:0 0 auto; border:1px solid var(--line); border-radius:6px; padding:6px; color:var(--ink); background:white; }
     @media (max-width:680px) { .steps { grid-template-columns:1fr; } header { padding-top:48px; } main { padding-top:34px; } }
   </style>
 </head>
 <body>
+  <div class="site-header"><div class="site-bar"><nav class="site-tabs"><a href="#quick-start" class="active">빠른 시작</a><a href="#template">템플릿 작성</a><a href="#profile">작업 프로필</a><a href="#schedule">예약 생성</a><a href="privacy-policy.html">개인정보처리방침</a></nav><select class="language-select" aria-label="언어 선택" onchange="if(this.value) location.href=this.value"><option value="guide.html" selected>한국어</option><option value="guide-en.html">English</option><option value="guide-ja.html">日本語</option><option value="guide-ru.html">Русский</option><option value="guide-zh.html">简体中文</option></select></div></div>
   <header>
     <div>
       <h1>Sheet Magic</h1>
       <p>Google Sheets의 데이터를 Google Slides 템플릿에 채워 PDF 또는 PPT로 만들어주는 Chrome 확장프로그램입니다.</p>
-      <nav>
-        <a href="#quick-start">빠른 시작</a>
-        <a href="#template">템플릿 작성</a>
-        <a href="#profile">작업 프로필</a>
-        <a href="#schedule">예약 생성</a>
-        <a href="privacy-policy.html">개인정보처리방침</a>
-        <a href="guide-en.html">English</a>
-      </nav>
     </div>
   </header>
   <main>
