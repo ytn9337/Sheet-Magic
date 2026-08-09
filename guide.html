@@ -1,5 +1,15 @@
 <!doctype html>
-<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sheet Magic 사용자 가이드</title><link rel="stylesheet" href="guide.css"></head><body>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Sheet Magic 사용자 가이드</title><link rel="stylesheet" href="guide.css"><script>
+(() => {
+  const params = new URLSearchParams(location.search);
+  const requested = (params.get('lang') || navigator.language || '').toLowerCase();
+  const target = requested.startsWith('en') ? 'guide-en.html'
+    : requested.startsWith('ja') ? 'guide-ja.html'
+      : requested.startsWith('ru') ? 'guide-ru.html'
+        : requested.startsWith('zh') ? 'guide-zh.html' : null;
+  if (target) location.replace(target);
+})();
+</script></head><body>
 <div class="site-header"><div class="site-bar"><nav class="site-tabs"><a class="active" href="#quick-start">빠른 시작</a><a href="#template">템플릿 작성</a><a href="#profile">작업 프로필</a><a href="#schedule">예약 생성</a><a href="privacy-ko.html">개인정보처리방침</a></nav><select class="language-select" aria-label="언어 선택" onchange="if(this.value)location.href=this.value"><option selected>한국어</option><option value="guide-en.html">English</option><option value="guide-ja.html">日本語</option><option value="guide-ru.html">Русский</option><option value="guide-zh.html">简体中文</option></select></div></div>
 <header><div><h1>Sheet Magic</h1><p>Google Sheets의 데이터를 Google Slides 템플릿에 자동으로 넣어 PDF 또는 PPT로 만드는 Chrome 확장프로그램입니다.</p></div></header>
 <main><section id="quick-start"><h2>빠른 시작</h2><div class="steps"><article class="step"><img src="images/01-generation.png" alt="작업 생성"><div><div class="number">01 · 시트 연결</div><h3>Google Sheets 열기</h3><p>대상 시트를 열고 헤더를 불러온 뒤 사용할 범위와 폰트를 설정합니다.</p></div></article><article class="step"><img src="images/03-template.png" alt="PPT 양식 선택"><div><div class="number">02 · 템플릿</div><h3>Google Slides 양식 선택</h3><p>치환 태그가 들어 있는 Google Slides 파일을 선택합니다.</p></div></article><article class="step"><img src="images/02-profile.png" alt="작업 프로필"><div><div class="number">03 · 작업 프로필</div><h3>설정 저장 및 재사용</h3><p>폰트, 범위, 출력 설정을 프로필로 저장해 다음 작업에서 불러옵니다.</p></div></article><article class="step"><img src="images/04-schedule.png" alt="예약 생성"><div><div class="number">04 · 예약 생성</div><h3>자동 생성 예약</h3><p>프로필, 실행 시간, 저장 위치를 지정해 자동 생성을 예약합니다.</p></div></article></div></section><section id="template"><h2>템플릿 작성</h2><p>시트 헤더 이름을 이중 꺾쇠 안에 입력합니다.</p><div class="tag">&lt;&lt;헤더&gt;&gt;<br>&lt;&lt;WaterSupply{Date:2025-02-09}&gt;&gt;</div><p>일치하는 태그가 시트의 값으로 치환됩니다.</p></section><section id="profile"><h2>작업 프로필</h2><p>템플릿, 범위, 폰트, 출력 형식과 저장 위치를 하나의 프로필로 저장할 수 있습니다.</p></section><section id="schedule"><h2>예약 생성</h2><p>저장한 프로필과 실행 시간을 선택합니다. 결과와 오류는 예약 관리에서 확인할 수 있습니다.</p></section></main><footer>Sheet Magic · <a href="privacy-ko.html">개인정보처리방침</a> · 피드백: sheetmagic@pocketwork.org</footer></body></html>
